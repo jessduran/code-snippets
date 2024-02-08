@@ -5,7 +5,6 @@ import { usePathname } from 'next/navigation';
 
 export default function Header() {
   const pathname = usePathname();
-  console.log(pathname);
 
   return (
     <div className="header">
@@ -19,12 +18,21 @@ export default function Header() {
       {/* hide button in add snippet page */}
       {
         pathname !== '/snippets/add' &&
-        <Link
-          href="/snippets/add"
-          className="main-cta-btn"
-        >
-          Add new snippet
-        </Link> 
+        <>
+          <Link
+            href="/snippets/add"
+            className="main-cta-btn desktop"
+          >
+            Add new snippet
+          </Link> 
+
+          <Link
+            href="/snippets/add"
+            className="main-cta-btn mobile"
+          >
+            New
+          </Link> 
+        </>
       }
     </div>
   );

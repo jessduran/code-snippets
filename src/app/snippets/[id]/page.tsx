@@ -32,7 +32,7 @@ export default async function SnipppetDetails(props: SnippetDetailsProps) {
             </form>
           </div>
         </div>
-        <pre className="p-3 border rounded bg-gray-200 border-gray-200">
+        <pre className="p-3 border rounded bg-gray-200 border-gray-200 text-wrap">
           <code>{snippet.code}</code>
         </pre>
       </div>

@@ -19,18 +19,21 @@ export default function SnippetEditForm({ snippet }: SnippetEditFormProps) {
   const editSnippetAction = actions.editSnippet.bind(null, snippet.id, code);
 
   return (
-    <div className="mt-10">
-      <h3 className="font-bold m-3 text-xl">
-        {snippet.title}
-      </h3>
+    <div>
+      <div className="subheader">
+        <h1 className="font-bold text-xl">
+          {snippet.title}
+        </h1>
+      </div>
+
       <Editor
-          height="40vh"
-          theme="vs-dark"
-          language='javascript'
-          defaultValue={snippet.code}
-          options={{ minimap: { enabled: false } }}
-          onChange={handleEditorChange}
-        />
+        height="40vh"
+        theme="vs-dark"
+        language='javascript'
+        defaultValue={snippet.code}
+        options={{ minimap: { enabled: false } }}
+        onChange={handleEditorChange}
+      />
       <form action={editSnippetAction} className="flex justify-center m-5">
         <button type="submit" className="secondary-cta-btn">
           Save

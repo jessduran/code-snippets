@@ -6,8 +6,11 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 50px 0;
   border-bottom: 1px solid;
+  flex-direction: row;
+  gap: 10px;
+  padding: 30px 0;
+
 }
 
 .subheader {
@@ -15,15 +18,21 @@
   justify-content: space-between;
   align-items: center;
   padding: 40px 0;
+  padding-bottom: 20px;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .main-cta-btn {
   border-radius: 50px;
   border: 0;
-  text-align: center;
   padding: 10px 20px;
   color: #fff;
   transition: 0.5s;
+  min-width: 100px;
+  justify-content: center;
+  text-align: center;
+
 
   background: linear-gradient(236deg, rgba(149,172,251,1) 16%, rgba(97,227,236,1) 81%);
 }
@@ -31,11 +40,12 @@
 .secondary-cta-btn {
   border-radius: 50px;
   border: 0;
-  text-align: center;
   padding: 10px 20px;
   color: #fff;
   transition: 0.5s;
   min-width: 100px;
+  justify-content: center;
+  text-align: center;
 
   background-color: rgba(149,172,251,1);
 }
@@ -68,4 +78,31 @@
 
 .secondary {
   border-color: rgba(149,172,251,1);
+}
+
+.mobile {
+  display: flex;
+}
+
+.desktop {
+  display: none;
+}
+
+
+@media (min-width: 600px) {
+  .header {
+    padding: 50px 0;
+  }
+
+  .subheader {
+    flex-direction: row;
+  }
+
+  .mobile {
+    display: none;
+  }
+
+  .desktop {
+    display: flex;
+  }
 }
