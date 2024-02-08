@@ -2,7 +2,7 @@
 
 import type { Snippet } from '@prisma/client';
 import Editor from '@monaco-editor/react';
-import { startTransition, useState } from 'react';
+import { useState } from 'react';
 import * as actions from '@/actions';
 
 interface SnippetEditFormProps {
@@ -19,7 +19,10 @@ export default function SnippetEditForm({ snippet }: SnippetEditFormProps) {
   const editSnippetAction = actions.editSnippet.bind(null, snippet.id, code);
 
   return (
-    <div>
+    <div className="mt-10">
+      <h3 className="font-bold m-3 text-xl">
+        {snippet.title}
+      </h3>
       <Editor
           height="40vh"
           theme="vs-dark"
@@ -28,8 +31,8 @@ export default function SnippetEditForm({ snippet }: SnippetEditFormProps) {
           options={{ minimap: { enabled: false } }}
           onChange={handleEditorChange}
         />
-      <form action={editSnippetAction}>
-        <button type="submit" className="p-2 border rounded">
+      <form action={editSnippetAction} className="flex justify-center m-5">
+        <button type="submit" className="secondary-cta-btn">
           Save
         </button>
       </form>

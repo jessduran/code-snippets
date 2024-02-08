@@ -6,24 +6,34 @@ export default async function Home() {
 
   const renderedSnippets = snippets.map((snippet) => {
     return (
-      <Link
+      <div
         key={snippet.id}
-        href={`/snippets/${snippet.id}`}
-        className="flex justify-between items-center p-2 border rounded"
+        className="snippet-item-wrapper"
       >
-        <div>{snippet.title}</div>
-        <div>View</div>
-      </Link>
+        <Link href={`/snippets/${snippet.id}`}>
+          {snippet.title}
+        </Link>
+        <div className="flex gap-1">
+          <Link
+            href={`/snippets/${snippet.id}`}
+            className="snippet-btn primary"
+          >
+            View
+          </Link>
+          <Link
+            href={`/snippets/${snippet.id}/edit`}
+            className="snippet-btn secondary"
+          >
+            Edit
+          </Link>
+        </div>
+      </div>
     )
   })
 
   return (
     <div>
-      <div className="flex m-2 justify-between items-center">
-        <h1 className="text-xl font-bold">Snippets</h1>
-        <Link href="/snippets/add" className="border p-2 rounded">New</Link>
-      </div>
-      <div className="flex gap-2 flex-col">
+      <div className="flex gap-3 flex-col mt-10">
         {renderedSnippets}
       </div>
     </div>

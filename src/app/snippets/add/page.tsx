@@ -13,8 +13,8 @@ export default function SnippetAddPage() {
   )
 
   return (
-    <form action={action}>
-      <h3 className="font-bold m-3">
+    <form action={action} className="mt-10">
+      <h3 className="font-bold m-5 text-xl">
         Add a new snippet
       </h3>
       <div className="flex flex-col gap-4">
@@ -39,9 +39,11 @@ export default function SnippetAddPage() {
 
         { formState.message ? renderErrorMessage(formState.message) : null }
 
-        <button className="rounded p-2 bg-blue-200" type="submit">
-          Save
-        </button>
+        <div className="flex justify-center">
+          <button type="submit" className="secondary-cta-btn">
+            Save
+          </button>
+        </div>
       </div>
     </form>
   );
